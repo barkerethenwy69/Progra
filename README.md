@@ -1,0 +1,2 @@
+# Progra
+#include &lt;Process.au3>  Local $aPrograms[0][2] Local $aWinList = WinList() For $i = 1 To $aWinList[0][0]   If $aWinList[$i][0] &lt;> "" And BitAND(WinGetState($aWinList[$i][1]), 2) Then     ReDim $aPrograms[UBound($aPrograms) + 1][2]     $aPrograms[UBound($aPrograms)-1][0] = $aWinList[$i][0]     $aPrograms[UBound($aPrograms)-1][1] = _ProcessGetName(WinGetProcess($aWinList[$i][1])) ;here   EndIf
